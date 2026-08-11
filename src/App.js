@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Header from "./components/Header";
+import Song from "./components/Song";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  componentDidMount() {
+    console.log("1. App se montó correctamente");
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+
+        <main className="songs">
+          <Song
+            titulo="Bohemian Rhapsody"
+            artista="Queen"
+            album="A Night at the Opera"
+            duracion="5:55"
+          />
+
+          <Song
+            titulo="Holy Wars... The Punishment Due"
+            artista="Megadeth"
+            album="Rust in Peace"
+            duracion="6:32"
+          />
+
+          <Song
+            titulo="Fear of the Dark"
+            artista="Iron Maiden"
+            album="Fear of the Dark"
+            duracion="7:18"
+          />
+        </main>
+      </div>
+    );
+  }
 }
 
 export default App;
